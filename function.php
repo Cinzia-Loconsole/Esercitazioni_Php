@@ -68,16 +68,17 @@ if (preg_match('/[\'^£$%&*()}{@#~?><,|=_+¬-]/', $password)){
 
 
 function finalPsw($password){
+    return (lunghezza($password) && maiuscolo($password) && number($password) && special($password));
     
-    $x=lunghezza($password);
-    $y=maiuscolo($password);
-    $n=number($password);
-    $s=special($password);
-    if($x && $y && $n && $s){
-        return true;
-    } else {
-    return false;
-}
+//     $x=lunghezza($password);
+//     $y=maiuscolo($password);
+//     $n=number($password);
+//     $s=special($password);
+//     if($x && $y && $n && $s){
+//         return true;
+//     } else {
+//     return false;
+// }
 }
 
 
@@ -111,3 +112,5 @@ for($i=0; $i<3; $i++){
         $psw = readline ("Inserisci nuovamente la password: \n");
     }
 }
+
+?>
