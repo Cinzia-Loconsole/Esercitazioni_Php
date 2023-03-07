@@ -3,6 +3,24 @@
 // - creare una classe Animale generica 
 // - Creare N classi (Almeno 5) di animali reali che specializzano la classe animale, utilizzando anche i metodi self per il conteggio
 
+
+// CREO CLASSE ZOO PER CONTARE GLI ANIMALI ALL'INTERNO
+class Zoo{
+    public $animalsInZoo;
+
+    public function __construct(...$animals){
+        $this->animalsInZoo=$animals;
+    }
+
+    public function howManyAnimals(){
+        $countAnimals = count($this->animalsInZoo);
+        echo "In questo zoo ci sono $countAnimals animali! \n";
+    }
+
+}
+
+// CREO CLASSE ANIMAL
+
 class Animal {
 
     public $name;
@@ -19,11 +37,13 @@ class Animal {
     $this->aggression=$aggression;
     }
 
+// PRESENTAZIONE GENERALE DI ANIMAL
     public function presentazione (){
         echo "Ciao $this->name sei il $this->breed più forte d' $this->origin con un grado di aggressività $this->aggression \n";
     }
 }
 
+// LEONE
     class Lion extends Animal {
         public $roar;
 
@@ -36,7 +56,7 @@ class Animal {
         }
     }
 
-
+// COCCODRILLO
     class Crocodile extends Animal {
         public $teeth;
 
@@ -49,6 +69,7 @@ class Animal {
         }
     }
 
+// SQUALO
     class Shark extends Animal {
         public $fin;
 
@@ -61,7 +82,7 @@ class Animal {
         }
     }
 
-
+// ELEFANTE
     class Elephant extends Animal {
         public $ears;
 
@@ -74,7 +95,7 @@ class Animal {
         }
     }
 
-
+// TIGRE
     class Tiger extends Animal {
         public $claws;
 
@@ -86,8 +107,6 @@ class Animal {
             echo "Ciao $this->name sei la $this->breed più feroce della $this->origin con un grado di aggressività $this->aggression e hai degli artigli $this->claws \n";
         }
     }
-
-
 
 $simba = new Lion('Simba', 'leone', 'africa', '10', 'ruggito');
 $crocco = new Crocodile('Crocco', 'coccodrillo', 'america', '10', '60');
@@ -110,5 +129,10 @@ print_r($dumbo);
 
 $shereKan->presentazioneTiger();
 print_r($shereKan);
+
+
+// CONTATORE ANIMALI IN ZOO
+$zoo = new Zoo($simba,$crocco,$shark,$dumbo,$shereKan);
+$zoo->howManyAnimals();
 
 ?>
