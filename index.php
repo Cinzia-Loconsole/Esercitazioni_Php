@@ -53,11 +53,11 @@
   
       if($value['genere']== 'donna'){
   
-          echo "Buongiorno signora ".$value['nome']." ".$value['cognome']. "\n";
+          echo "Buongiorno sign.ra ".$value['nome']." ".$value['cognome']. "\n";
   
       } else {
   
-          echo "Buongiorno signor ".$value['nome']." ".$value['cognome']. "\n";
+          echo "Buongiorno Sig. ".$value['nome']." ".$value['cognome']. "\n";
   
       }
   }

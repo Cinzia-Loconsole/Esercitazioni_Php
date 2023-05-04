@@ -68,6 +68,8 @@ if (preg_match('/[\'^£$%&*()}{@#~?><,|=_+¬-]/', $password)){
 
 
 function finalPsw($password){
+    
+    // ALTERNATIVA PIU' BREVE AL CODICE COMMENTATO
     return (lunghezza($password) && maiuscolo($password) && number($password) && special($password));
     
 //     $x=lunghezza($password);

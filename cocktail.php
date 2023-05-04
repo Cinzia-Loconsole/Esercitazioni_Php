@@ -15,25 +15,25 @@ abstract class NoAlchoolic{
 
 class Rum extends Alchoolic{
     public function liquidIngredients(){
-        echo "Nel mojito mettici un bel rum bianco \n";
+        echo "Nel mojito metti del Rum bianco \n";
     }
 }
 
 class Gin extends Alchoolic{
     public function liquidIngredients(){
-        echo "Nel mojito se ci metti il gin viene una ciofeca \n";
+        echo "Nel mojito se ci metti il Gin non viene bene \n";
     }
 }
 
 class Mint extends NoAlchoolic{
     public function solidIngredients(){
-        echo "Il mojito lo fai pieno di menta così è fresco \n";
+        echo "Il mojito con la menta così è fresco \n";
     }
 }
 
 class Ice extends NoAlchoolic{
     public function solidIngredients(){
-        echo "Nen metterci troppo ghiaccio altrimenti diventa acqua \n";
+        echo "Non metter troppo ghiaccio altrimenti diventa acquoso \n";
     }
 }
 
@@ -54,13 +54,13 @@ class Mojito{
         $this->solidIngredients->solidIngredients();
     }
 
-    use Drug;
+    use Lime;
 
 }
 
-trait Drug {
-    public function droga (){
-        echo "Mettici anche un pò di polverina magica \n";
+trait Lime {
+    public function limone (){
+        echo "Metti anche un pò di limone \n";
     }
 }
 
@@ -78,4 +78,4 @@ $mojito2->liquidIngredients();
 
 $mojito2->solidIngredients();
 
-$mojito2->droga();
+$mojito2->limone();
